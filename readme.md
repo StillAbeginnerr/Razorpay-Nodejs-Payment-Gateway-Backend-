@@ -13,7 +13,8 @@ Platforms to be supported : Android, iOS, PWA.
 
 ## Features
 
-- **Order Creation:** Easily create new payment orders with customizable amounts and receipts.
+- **Single Purchase Order Creation:** Easily create new payment orders with customizable amounts and receipts.
+- **Subscription Based Purchase Order Creation:** Easily create new subscriptions with customizable amounts and receipts.
 - **Payment Capture:** Securely capture payments after authorization.
 - **Webhook Handling:** Set up endpoints to process real-time payment events from Razorpay.
 - **Secure Integration:** Use environment variables to manage sensitive credentials.
