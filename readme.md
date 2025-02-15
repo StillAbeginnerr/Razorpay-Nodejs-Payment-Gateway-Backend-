@@ -1,8 +1,10 @@
 # Razorpay Node.js Payment Gateway Backend 
 
-Hey I'm Shivam, my aim to develop this repository is to help new developers to be able to understand how SaaS payment works using RazorPay which has the best documentation, I'll be dropping my own documentation as well using swagger and also hobbyist developers can use it as a template for their projects.
+Hey I'm Shivam, my aim to develop this repository is to help new developers to be able to understand how SaaS payment works using Razorpay which has the best documentation, I'll be dropping my own documentation as well using swagger and also hobbyist developers can use it as a template for their projects.
 
 A backend application built with Node.js and Express for integrating [Razorpay](https://razorpay.com/) payment gateway functionalities. This repository demonstrates how to create orders, capture payments, and manage webhooks using Razorpay’s API, providing a solid foundation for building robust payment solutions.
+
+Platforms to be supported : Android, iOS, PWA.
 
 ## Table of Contents
 
