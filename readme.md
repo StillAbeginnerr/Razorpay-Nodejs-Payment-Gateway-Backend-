@@ -1,4 +1,4 @@
-# SaaS Payment Gateway Backend using Node.js
+# SaaS Payment Gateway Backend Template using Node.js
 
 Hey I'm Shivam, my aim to develop this repository is to help new developers to be able to understand how SaaS payment works using Razorpay which has the best documentation, I'll be dropping my own documentation as well using swagger and also hobbyist developers can use it as a template for their projects.
 
