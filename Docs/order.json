@@ -1,0 +1,130 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Create Order API",
+    "description": "Endpoints for order creation and management",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Local development server"
+    }
+  ],
+  "paths": {
+    "/create-order": {
+      "post": {
+        "summary": "Create a new payment order",
+        "description": "Initiates a payment transaction and creates an order record",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateOrderRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully created order",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CreateOrderRequest": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "integer",
+            "example": 100
+          },
+          "currency": {
+            "type": "string",
+            "example": "INR"
+          },
+          "receipt": {
+            "type": "string",
+            "example": "order_123"
+          }
+        }
+      },
+      "OrderResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "order_PwFUxO0nYKfCHa"
+          },
+          "amount": {
+            "type": "integer",
+            "example": 100
+          },
+          "currency": {
+            "type": "string",
+            "example": "INR"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "created",
+              "paid",
+              "failed"
+            ],
+            "example": "created"
+          },
+          "receipt": {
+            "type": "string",
+            "example": "orders_1739679872181"
+          },
+          "created_at": {
+            "type": "integer",
+            "format": "unix-timestamp",
+            "example": 1739679872
+          },
+          "notes": {
+            "type": "object",
+            "additionalProperties": true,
+            "example": {
+              "key1": "Order creation"
+            }
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "example": "Invalid amount"
+          },
+          "code": {
+            "type": "string",
+            "example": "BAD_REQUEST"
+          }
+        }
+      }
+    }
+  }
+}
