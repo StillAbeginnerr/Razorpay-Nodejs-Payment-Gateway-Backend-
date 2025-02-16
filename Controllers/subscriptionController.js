@@ -1,7 +1,7 @@
 const pool = require('../database/connection.js')
 const razorpay = require('../config/razorPayConfig.js')
 
-const createOrder = async(req,res)=>{
+const CreateOrder = async(req,res)=>{
     const {amount, currency} = req.body;
     if(!amount || !currency)
     {
@@ -11,13 +11,17 @@ const createOrder = async(req,res)=>{
         const order = await razorpay.orders.create({
             amount : amount,
             currency: currency,
-            receipt:`orders ${date.now()}`
+            receipt:`orders ${Date.now()}`,
+            notes : {
+                key1 : "Order creation"
+            }
         })
         res.status(200).json(order);
     }catch(error)
     {
-        console.log(error);
-        console.error("Error log for create orders : ", error.message);
-
+        console.error("Error creating orders:", error);
+        res.status(500).json({ message:"Internal server error" });
     }
 }
+
+module.exports.CreateOrder = CreateOrder;
