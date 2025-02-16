@@ -25,3 +25,6 @@ Platforms to be supported : Android, iOS, PWA.
 - [NPM](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
 - A valid [Razorpay](https://razorpay.com/) account to obtain API keys
 
+
+## Things to remember 
+- destructuring syntax { function_name } requires module.exports.function_name = function_name;
